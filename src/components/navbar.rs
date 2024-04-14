@@ -30,7 +30,7 @@ impl Component for Navbar{
     fn view(&self)->Html{
         let cart_value = self.props.cart_products
         .iter()
-        .fold(0.0|acc,cp| acc+(cp.quantity as f64 * cp.product.price));
+        .fold(0.0,|acc,cp| acc+(cp.quantity as f64 * cp.product.price));
         html!{
             <div class="navbar">
                 <div class="navbar_title">{"RustMart"}</div>
